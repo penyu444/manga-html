@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "onepiece",
+    "thumbnail": "https://placehold.co/300x400?text=Comic+1",
+    "url": "https://penyu444.github.io/manga-html/html/onepiece.html"
+  },
+  {
+    "id": "2",
+    "title": "Comic Two",
+    "thumbnail": "https://placehold.co/300x400?text=Comic+2",
+    "url": "http://192.168.1.5:8082/comic2/index.html"
+  }
+]
