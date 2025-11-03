@@ -2,16 +2,17 @@
   {
     "id": "1",
     "title": "Phantom Blood",
-    "thumbnail": "https://placehold.co/300x400?text=One+Piece",
+    "thumbnail": "https://placehold.co/300x400?text=Phantom+Blood",
     "url": "https://penyu444.github.io/manga-html/PhantomBlood/PhantomBlood.html",
     "tags": ["Adventure", "Action", "Shounen"]
   },
   {
     "id": "2",
-    "title": "Comic Two",
+    "title": "Battle Tendencies",
     "thumbnail": "https://placehold.co/300x400?text=Comic+2",
-    "url": "http://192.168.1.5:8082/comic2/index.html",
+    "url": "https://penyu444.github.io/manga-html/BattleTendencies/BattleTendencies.html",
     "tags": ["Romance", "Drama"]
   }
 ]
+
 
