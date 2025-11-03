@@ -1,9 +1,9 @@
 [
   {
     "id": "1",
-    "title": "One Piece",
+    "title": "Phantom Blood",
     "thumbnail": "https://placehold.co/300x400?text=One+Piece",
-    "url": "https://penyu444.github.io/manga-html/html/onepiece.html",
+    "url": "https://penyu444.github.io/manga-html/PhantomBlood/PhantomBlood.html",
     "tags": ["Adventure", "Action", "Shounen"]
   },
   {
@@ -14,3 +14,4 @@
     "tags": ["Romance", "Drama"]
   }
 ]
+
