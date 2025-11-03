@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+
+    .thumbnail {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.03);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PDF Gallery</h1>
+
+  <div class="gallery">
+    <!-- Thumbnail 1 -->
+    <a href="Volume_1_Dio_the_Invader.pdf" target="_blank" class="thumbnail">
+      <img src="thumb1.jpg" alt="PDF 1">
+    </a>
+
+    <!-- Thumbnail 2 -->
+    <a href="Volume_2_The_Thirst_for_Blood.pdf" target="_blank" class="thumbnail">
+      <img src="thumb2.jpg" alt="PDF 2">
+    </a>
+
+    <!-- Thumbnail 3 -->
+    <a href="Volume_3_The Dark Knights.pdf" target="_blank" class="thumbnail">
+      <img src="thumb3.jpg" alt="PDF 3">
+    </a>
+      <!-- Thumbnail 2 -->
+    <a href="Volume_4_Chamber of the Two Headed Dragon.pdf" target="_blank" class="thumbnail">
+      <img src="thumb2.jpg" alt="PDF 4">
+    </a>
+
+    <!-- Thumbnail 3 -->
+    <a href="Volume_5_The Final Ripple.pdf" target="_blank" class="thumbnail">
+      <img src="thumb3.jpg" alt="PDF 5">
+    </a>
+  </div>
+  
+
+</body>
+</html>
