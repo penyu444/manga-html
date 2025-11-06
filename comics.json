@@ -12,15 +12,17 @@
     "thumbnail": "https://placehold.co/300x400?text=Comic+2",
     "url": "https://penyu444.github.io/manga-html/BattleTendencies/BattleTendencies.html",
     "tags": ["Romance", "Drama"]
-  }
+  },
   {
-  "id": "2",
-  "title": "Yotsubato",
-  "thumbnail": "https://placehold.co/300x400?text=Comic+2",
-  "url": "https://penyu444.github.io/manga-html/yotsubato/yotsubato.html",
-  "tags": ["Comedy", "Adventure"]
+    "id": "3",
+    "title": "Yotsubato",
+    "thumbnail": "https://placehold.co/300x400?text=Comic+2",
+    "url": "https://penyu444.github.io/manga-html/yotsubato/yotsubato.html",
+    "tags": ["Comedy", "Adventure"]
   }
 ]
+
+
 
 
 
