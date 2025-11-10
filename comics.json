@@ -10,7 +10,8 @@
     "https://placehold.co/400x600?text=Preview+3",
     "https://placehold.co/400x600?text=Preview+4"
   ],
-    "tags": ["Adventure", "Action", "Shounen"]
+    "tags": ["Adventure", "Action", "Shounen"],
+    "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her.",
   },
   {
     "id": "2",
@@ -23,22 +24,25 @@
     "https://placehold.co/400x600?text=Preview+3",
     "https://placehold.co/400x600?text=Preview+4"
   ],
-    "tags": ["Romance", "Drama"]
+    "tags": ["Romance", "Drama"],
+    "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her.",
   },
-  {
-    "id": "3",
-    "title": "Yotsubato",
-    "thumbnail": "https://raw.githubusercontent.com/penyu444/manga-html/main/yotsubato/cover.png",
-    "url": "https://penyu444.github.io/manga-html/yotsubato/yotsubato.html",
-      "previewImages": [
+{
+  "id": "3",
+  "title": "Yotsubato",
+  "thumbnail": "https://raw.githubusercontent.com/penyu444/manga-html/main/yotsubato/cover.png",
+  "url": "https://penyu444.github.io/manga-html/yotsubato/yotsubato.html",
+  "previewImages": [
     "https://placehold.co/400x600?text=Preview+1",
     "https://placehold.co/400x600?text=Preview+2",
     "https://placehold.co/400x600?text=Preview+3",
     "https://placehold.co/400x600?text=Preview+4"
   ],
-    "tags": ["Comedy", "Adventure"]
-  }
+  "tags": ["Comedy", "Adventure"],
+  "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her.",
+},
 ]
+
 
 
 
