@@ -197,64 +197,57 @@
 
   <header>
     <img src="logo.jpg" alt="Yotsuba logo">
-    <h1>Yotsubato! Volumes</h1>
+    <h1>Yotsubato!</h1>
   </header>
 
   <!-- Example Volume -->
-  <div class="volume">
-    <div class="volume-header" onclick="toggleVolume(this)">
-      <div class="volume-left">
-        <img src="vol1_cover.jpg" class="volume-thumb" alt="Volume 1 Cover">
-        <span class="volume-title">Yotsuba Volume 1</span>
-      </div>
-      <span class="volume-arrow">▶</span>
+<div class="volume">
+  <div class="volume-header" onclick="toggleVolume(this)">
+    <div class="volume-left">
+      <img src="vol1_cover.jpg" class="volume-thumb" alt="Volume 1 Cover">
+      <span class="volume-title">Yotsuba Volume 1</span>
+    </div>
+    <span class="volume-arrow">▶</span>
+  </div>
+
+  <div class="chapters">
+    <div class="chapter" onclick="openPDF('ch1 - yotsuba.pdf', 'Chapter 1: Moving Day')">
+      <img src="ch1cover.jpg" alt="Chapter 1">
+      <div class="chapter-info"><div class="chapter-title">Chapter 1: Yotsuba & Moving</div></div>
     </div>
 
-    <div class="chapters">
-      <div class="chapter" onclick="openPDF('ch1 - yotsuba.pdf', 'Chapter 1: Moving Day')">
-        <img src="ch1cover.jpg" alt="Chapter 1">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 1: Yotsuba & Moving</div>
-        </div>
-      </div>
-      <div class="chapter" onclick="openPDF('ch2 - yotsuba', 'Chapter 2: Bicycle Adventure')">
-        <img src="ch2cover.jpg" alt="Chapter 2">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 2: Yotsuba & Greetings</div>
-        </div>
-      </div>
-      <div class="chapter" onclick="openPDF('ch3 - yotsuba.pdf', 'Chapter 3: Yotsuba & Global Warming')">
-        <img src="ch3cover.jpg" alt="Chapter 3">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 3: Yotsuba & Moving</div>
-        </div>
-      </div>
-      <div class="chapter" onclick="openPDF('ch4 - yotsuba', 'Chapter 4: Yotsuba & TV')">
-        <img src="ch4cover.jpg" alt="Chapter 4">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 4: Yotsuba & TV</div>
-        </div>
-      </div>
-            <div class="chapter" onclick="openPDF('ch5 - yotsuba.pdf', 'Chapter 5: Moving Day')">
-        <img src="ch5cover.jpg" alt="Chapter 5">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 5: Yotsuba & Shopping</div>
-        </div>
-      </div>
-      <div class="chapter" onclick="openPDF('ch6 - yotsuba', 'Chapter 6: Yotsuba & Cicadas')">
-        <img src="ch6cover.jpg" alt="Chapter 6">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 6: Yotsuba & Cicadas</div>
-        </div>
-      </div>
-      <div class="chapter" onclick="openPDF('ch7 - yotsuba.pdf', 'Chapter 7: Yotsuba & Rainstorms')">
-        <img src="ch7cover.jpg" alt="Chapter 7">
-        <div class="chapter-info">
-          <div class="chapter-title">Chapter 7: Yotsuba & Rainstorms</div>
-        </div>
-      </div>
+    <div class="chapter" onclick="openPDF('ch2 - yotsuba.pdf', 'Chapter 2: Greetings')">
+      <img src="ch2cover.jpg" alt="Chapter 2">
+      <div class="chapter-info"><div class="chapter-title">Chapter 2: Yotsuba & Greetings</div></div>
+    </div>
+
+    <div class="chapter" onclick="openPDF('ch3 - yotsuba.pdf', 'Chapter 3: Global Warming')">
+      <img src="ch3cover.jpg" alt="Chapter 3">
+      <div class="chapter-info"><div class="chapter-title">Chapter 3: Yotsuba & Global Warming</div></div>
+    </div>
+
+    <div class="chapter" onclick="openPDF('ch4 - yotsuba.pdf', 'Chapter 4: TV')">
+      <img src="ch4cover.jpg" alt="Chapter 4">
+      <div class="chapter-info"><div class="chapter-title">Chapter 4: Yotsuba & TV</div></div>
+    </div>
+
+    <div class="chapter" onclick="openPDF('ch5 - yotsuba.pdf', 'Chapter 5: Shopping')">
+      <img src="ch5cover.jpg" alt="Chapter 5">
+      <div class="chapter-info"><div class="chapter-title">Chapter 5: Yotsuba & Shopping</div></div>
+    </div>
+
+    <div class="chapter" onclick="openPDF('ch6 - yotsuba.pdf', 'Chapter 6: Cicadas')">
+      <img src="ch6cover.jpg" alt="Chapter 6">
+      <div class="chapter-info"><div class="chapter-title">Chapter 6: Yotsuba & Cicadas</div></div>
+    </div>
+
+    <div class="chapter" onclick="openPDF('ch7 - yotsuba.pdf', 'Chapter 7: Rainstorms')">
+      <img src="ch7cover.jpg" alt="Chapter 7">
+      <div class="chapter-info"><div class="chapter-title">Chapter 7: Yotsuba & Rainstorms</div></div>
     </div>
   </div>
+</div>
+
 
   <!-- PDF Reader -->
   <div id="reader">
