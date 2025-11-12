@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yotsubato! Chapters</title>
+  <title>Yotsubato! Volumes</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <style>
     body {
@@ -11,8 +11,7 @@
       background: #e5f7e1;
       color: #2c5f2d;
       overflow: auto;
-      height: auto;
-      -webkit-overflow-scrolling: touch;
+      min-height: 100vh;
     }
 
     header {
@@ -41,44 +40,100 @@
       font-weight: bold;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .thumbnail {
+    /* --- Volume Section --- */
+    .volume {
       background: white;
-      border-radius: 10px;
+      margin: 1rem;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.15s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .thumbnail img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .volume-header {
+      background: #a8e6cf;
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
     }
 
-    .thumbnail:hover {
-      transform: scale(1.05);
+    .volume-header:hover {
+      background: #9edac4;
     }
 
+    .volume-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .volume-arrow {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .volume.open .volume-arrow {
+      transform: rotate(90deg);
+    }
+
+    .chapters {
+      display: none;
+      padding: 1rem;
+      background: #f6fff5;
+      border-top: 1px solid #d9f2d6;
+    }
+
+    .chapter {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .chapter:hover {
+      transform: scale(1.03);
+    }
+
+    .chapter img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+    }
+
+    .chapter-info {
+      padding: 0.5rem 1rem;
+    }
+
+    .chapter-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    /* --- PDF Reader --- */
     #reader {
       display: none;
       flex-direction: column;
       height: 100vh;
       background: #fff;
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
     }
 
     #pdf-canvas {
       flex: 1;
       width: 100%;
-      background: #fff;
       display: block;
+      background: #fff;
       object-fit: contain;
     }
 
@@ -122,19 +177,33 @@
 
   <header>
     <img src="logo.jpg" alt="Yotsuba logo">
-    <h1>Yotsubato! Chapters</h1>
+    <h1>Yotsubato! Volumes</h1>
   </header>
 
-  <!-- Chapter selection -->
-  <div id="gallery" class="gallery">
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch1.pdf')"><img src="thumb1.png" alt="Chapter 1"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch2.pdf')"><img src="thumb2.png" alt="Chapter 2"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch3.pdf')"><img src="thumb3.png" alt="Chapter 3"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch4.pdf')"><img src="thumb4.png" alt="Chapter 4"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch5.pdf')"><img src="thumb5.png" alt="Chapter 5"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch6.pdf')"><img src="thumb6.png" alt="Chapter 6"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch7.pdf')"><img src="thumb7.png" alt="Chapter 7"></div>
-    <div class="thumbnail" onclick="openPDF('yotsuba_ch8.pdf')"><img src="thumb8.png" alt="Chapter 8"></div>
+  <!-- Example Volume -->
+  <div class="volume">
+    <div class="volume-header" onclick="toggleVolume(this)">
+      <span class="volume-title">Volume 1: Yotsuba & Summer</span>
+      <span class="volume-arrow">▶</span>
+    </div>
+
+    <div class="chapters">
+      <div class="chapter" onclick="openPDF('yotsuba_ch1.pdf', 'Chapter 1: Moving Day')">
+        <img src="thumb1.png" alt="Chapter 1">
+        <div class="chapter-info">
+          <div class="chapter-title">Chapter 1: Moving Day</div>
+          <div class="chapter-desc">Yotsuba and her dad move into a new neighborhood.</div>
+        </div>
+      </div>
+
+      <div class="chapter" onclick="openPDF('yotsuba_ch2.pdf', 'Chapter 2: Bicycle Adventure')">
+        <img src="thumb2.png" alt="Chapter 2">
+        <div class="chapter-info">
+          <div class="chapter-title">Chapter 2: Bicycle Adventure</div>
+          <div class="chapter-desc">Yotsuba learns how to ride a bike... kind of.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- PDF Reader -->
@@ -147,15 +216,27 @@
   </div>
 
   <script>
+    // --- Volume toggle ---
+    function toggleVolume(header) {
+      const volume = header.parentElement;
+      const chapters = volume.querySelector('.chapters');
+      const open = volume.classList.toggle('open');
+      chapters.style.display = open ? 'block' : 'none';
+    }
+
+    // --- PDF.js reader logic ---
     let pdfDoc = null,
         pageNum = 1,
         scale = 1.4,
         canvas = document.getElementById('pdf-canvas'),
         ctx = canvas.getContext('2d');
 
-    function openPDF(url) {
-      document.getElementById('gallery').style.display = 'none';
+    function openPDF(url, title) {
+      document.body.scrollTop = 0;
       document.getElementById('reader').style.display = 'flex';
+      document.querySelectorAll('.volume, header').forEach(el => el.style.display = 'none');
+
+      document.title = title;
 
       pdfjsLib.getDocument(url).promise.then(pdf => {
         pdfDoc = pdf;
@@ -166,10 +247,10 @@
 
     function renderPage(num) {
       pdfDoc.getPage(num).then(page => {
-        let viewport = page.getViewport({ scale: scale });
+        const viewport = page.getViewport({ scale });
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-        let renderCtx = { canvasContext: ctx, viewport: viewport };
+        const renderCtx = { canvasContext: ctx, viewport: viewport };
         page.render(renderCtx);
         document.getElementById('page-info').innerText = `${num} / ${pdfDoc.numPages}`;
       });
@@ -189,9 +270,10 @@
 
     function closePDF() {
       document.getElementById('reader').style.display = 'none';
-      document.getElementById('gallery').style.display = 'grid';
+      document.querySelectorAll('.volume, header').forEach(el => el.style.display = '');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       pdfDoc = null;
+      document.title = "Yotsubato! Volumes";
     }
   </script>
 
