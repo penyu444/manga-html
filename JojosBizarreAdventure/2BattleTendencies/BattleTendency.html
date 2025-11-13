@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JoJo Part 1 – Phantom Blood</title>
+<title>JoJo Part 2 – Battle Tendency</title>
 
 <!-- PDF.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
@@ -13,31 +13,30 @@
 body {
   margin: 0;
   font-family: "Trebuchet MS", sans-serif;
-  background: #13131a;
-  color: #701414;
+  background: #1e311a; /* Military dark green */
+  color: #d4d4ff;
 }
 
 /* ---------- HEADER ---------- */
 header {
-  background: linear-gradient(90deg, #0033aa, #3366ff);
+  background: linear-gradient(90deg, #3d0066, #5a1e8a); /* deep purple */
   padding: 20px;
   text-align: center;
   color: white;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 3px;
-  border-bottom: 4px solid #461d1d;
+  border-bottom: 4px solid #284022; /* dark green accent */
   text-shadow: 0 0 8px #000;
 }
 
-/* ---------- VOLUME CONTAINER ---------- */
+/* ---------- VOLUME GRID ---------- */
 #volume-list {
   padding: 20px;
   display: grid;
   gap: 20px;
 }
 
-/* Responsive columns */
 @media (min-width: 700px) {
   #volume-list {
     grid-template-columns: repeat(2, 1fr);
@@ -53,21 +52,20 @@ header {
 /* ---------- VOLUME CARD ---------- */
 .volume {
   background: #111;
-  border: 2px solid #072579;
+  border: 2px solid #3d0066;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: 0.3s ease;
-  box-shadow: 0 0 12px rgba(0, 18, 182, 0.4);
+  box-shadow: 0 0 12px rgba(90, 0, 181, 0.4);
 }
 
 .volume:hover {
   transform: scale(1.03);
-  border-color: #ff3d3d;
-  box-shadow: 0 0 20px rgba(255, 39, 93, 0.8);
+  border-color: #f5ff68;
+  box-shadow: 0 0 20px rgba(235, 232, 53, 0.8);
 }
 
-/* Thumbnail */
 .volume img {
   width: 100%;
   height: 260px;
@@ -75,21 +73,20 @@ header {
   filter: brightness(0.8) contrast(1.2);
 }
 
-/* Text */
 .volume-title {
   padding: 15px;
   text-align: center;
   font-size: 1.3rem;
-  color: #701414;
-  text-shadow: 0 0 5px #ff1111a1;
+  color: #50a866; /* mint green highlight */
+  text-shadow: 0 0 5px #3d0066;
 }
 
-/* ---------- PDF READER OVERLAY ---------- */
+/* ---------- PDF VIEWER ---------- */
 #reader {
   display: none;
   position: fixed;
   inset: 0;
-  background: #000000;
+  background: #000;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -101,7 +98,7 @@ header {
   top: 20px;
   left: 20px;
   padding: 10px 18px;
-  background: #0033aa;
+  background: #3d0066;
   color: white;
   border: none;
   font-size: 1rem;
@@ -136,44 +133,55 @@ header {
 </head>
 <body>
 
-<header>JoJo’s Bizarre Adventure – Part 1: Phantom Blood</header>
+<header>JoJo’s Bizarre Adventure – Part 2: Battle Tendency</header>
 
-<!-- VOLUME LIST -->
 <div id="volume-list">
 
-  <!-- Volume 1 -->
-  <div class="volume" onclick="openPDF('Volume_1_Dio_the_Invader.pdf')">
-    <img src="vol1cover.png" alt="Volume 1 Cover">
-    <div class="volume-title">Phantom Blood – Volume 1</div>
+  <!-- Volume 6 -->
+  <div class="volume" onclick="openPDF('Volume_6_Jojo_Vs_the_Ultimate_Lifeform.pdf')">
+    <img src="vol6cover.png" alt="Volume 6 Cover">
+    <div class="volume-title">Battle Tendency – Volume 6</div>
   </div>
 
-  <!-- Volume 2 -->
-  <div class="volume" onclick="openPDF('Volume_2_The_Thirst_for_Blood.pdf')">
-    <img src="vol2cover.png" alt="Volume 2 Cover">
-    <div class="volume-title">Phantom Blood – Volume 2</div>
+  <!-- Volume 7 -->
+  <div class="volume" onclick="openPDF('Volume_7_The_Red_Stone_of_Aja.pdf')">
+    <img src="vol7cover.png" alt="Volume 7 Cover">
+    <div class="volume-title">Battle Tendency – Volume 7</div>
   </div>
 
-  <!-- Volume 3 -->
-  <div class="volume" onclick="openPDF('Volume_3_The Dark Knights.pdf')">
-    <img src="vol3cover.png" alt="Volume 3 Cover">
-    <div class="volume-title">Phantom Blood – Volume 3</div>
+  <!-- Volume 8 -->
+  <div class="volume" onclick="openPDF('Volume_8_The_Final_Trial.pdf')">
+    <img src="vol8cover.png" alt="Volume 8 Cover">
+    <div class="volume-title">Battle Tendency – Volume 8</div>
   </div>
 
-    <!-- Volume 5 -->
-  <div class="volume" onclick="openPDF('Volume_4_Chamber of the Two Headed Dragon.pdf')">
-    <img src="vol4cover.png" alt="Volume 4 Cover">
-    <div class="volume-title">Phantom Blood – Volume 4</div>
+  <!-- Volume 9 -->
+  <div class="volume" onclick="openPDF('Volume_9_Rushing_Towards_the_Cliff_of_Death.pdf')">
+    <img src="vol9cover.png" alt="Volume 9 Cover">
+    <div class="volume-title">Battle Tendency – Volume 9</div>
   </div>
 
-    <!-- Volume 5 -->
-  <div class="volume" onclick="openPDF('Volume_5_The Final Ripple.pdf')">
-    <img src="vol5cover.png" alt="Volume 5 Cover">
-    <div class="volume-title">Phantom Blood – Volume 5</div>
+    <!-- Volume 10 -->
+  <div class="volume" onclick="openPDF('Volume_10_The_Crimson_Bubble.pdf')">
+    <img src="vol10cover.png" alt="Volume 10 Cover">
+    <div class="volume-title">Battle Tendency – Volume 10</div>
+  </div>
+
+      <!-- Volume 11 -->
+  <div class="volume" onclick="openPDF('Volume_11_The_Warrior_Returning_to_the_Wind.pdf')">
+    <img src="vol11cover.png" alt="Volume 11 Cover">
+    <div class="volume-title">Battle Tendency – Volume 11</div>
+  </div>
+
+      <!-- Volume 12 -->
+  <div class="volume" onclick="openPDF('Volume_12_The_Birth_of_the_Ultimate_being.pdf')">
+    <img src="vol12cover.png" alt="Volume 12 Cover">
+    <div class="volume-title">Battle Tendency – Volume 12</div>
   </div>
 
 </div>
 
-<!-- PDF READER OVERLAY -->
+<!-- PDF READER -->
 <div id="reader">
   <button id="back-btn" onclick="closePDF()">← Back</button>
   <canvas id="pdf-canvas"></canvas>
@@ -211,9 +219,7 @@ function renderPage(num) {
     canvas.height = viewport.height;
     canvas.width = viewport.width;
 
-    let renderContext = { canvasContext: ctx, viewport };
-    page.render(renderContext);
-
+    page.render({ canvasContext: ctx, viewport });
     document.getElementById("page-info").innerText =
       `Page ${num} / ${pdfDoc.numPages}`;
   });
