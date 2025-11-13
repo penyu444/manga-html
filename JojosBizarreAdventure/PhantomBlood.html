@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JoJo Part 1 – Phantom Blood</title>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+
+<style>
+/* ---------- GENERAL PAGE STYLE ---------- */
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background: #13131a;
+  color: #701414;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(90deg, #0033aa, #3366ff);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-bottom: 4px solid #461d1d;
+  text-shadow: 0 0 8px #000;
+}
+
+/* ---------- VOLUME CONTAINER ---------- */
+#volume-list {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+/* Responsive columns */
+@media (min-width: 700px) {
+  #volume-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  #volume-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- VOLUME CARD ---------- */
+.volume {
+  background: #111;
+  border: 2px solid #072579;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 18, 182, 0.4);
+}
+
+.volume:hover {
+  transform: scale(1.03);
+  border-color: #ff3d3d;
+  box-shadow: 0 0 20px rgba(255, 39, 93, 0.8);
+}
+
+/* Thumbnail */
+.volume img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Text */
+.volume-title {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #701414;
+  text-shadow: 0 0 5px #ff1111a1;
+}
+
+/* ---------- PDF READER OVERLAY ---------- */
+#reader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+#back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  background: #0033aa;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #000;
+}
+
+#pdf-canvas {
+  max-width: 95%;
+  max-height: 90%;
+  margin-top: 60px;
+}
+
+#page-info {
+  color: white;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Tap zones */
+.nav-zone {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+#prev-zone { left: 0; }
+#next-zone { right: 0; }
+</style>
+</head>
+<body>
+
+<header>JoJo’s Bizarre Adventure – Part 1: Phantom Blood</header>
+
+<!-- VOLUME LIST -->
+<div id="volume-list">
+
+  <!-- Volume 1 -->
+  <div class="volume" onclick="openPDF('Volume_1_Dio_the_Invader.pdf')">
+    <img src="vol1cover.png" alt="Volume 1 Cover">
+    <div class="volume-title">Phantom Blood – Volume 1</div>
+  </div>
+
+  <!-- Volume 2 -->
+  <div class="volume" onclick="openPDF('Volume_2_The_Thirst_for_Blood.pdf')">
+    <img src="vol2cover.png" alt="Volume 2 Cover">
+    <div class="volume-title">Phantom Blood – Volume 2</div>
+  </div>
+
+  <!-- Volume 3 -->
+  <div class="volume" onclick="openPDF('Volume_3_The Dark Knights.pdf')">
+    <img src="vol3cover.png" alt="Volume 3 Cover">
+    <div class="volume-title">Phantom Blood – Volume 3</div>
+  </div>
+
+    <!-- Volume 5 -->
+  <div class="volume" onclick="openPDF('Volume_4_Chamber of the Two Headed Dragon.pdf')">
+    <img src="vol4cover.png" alt="Volume 4 Cover">
+    <div class="volume-title">Phantom Blood – Volume 4</div>
+  </div>
+
+    <!-- Volume 5 -->
+  <div class="volume" onclick="openPDF('Volume_5_The Final Ripple.pdf')">
+    <img src="vol5cover.png" alt="Volume 5 Cover">
+    <div class="volume-title">Phantom Blood – Volume 5</div>
+  </div>
+
+</div>
+
+<!-- PDF READER OVERLAY -->
+<div id="reader">
+  <button id="back-btn" onclick="closePDF()">← Back</button>
+  <canvas id="pdf-canvas"></canvas>
+  <div id="prev-zone" class="nav-zone" onclick="prevPage()"></div>
+  <div id="next-zone" class="nav-zone" onclick="nextPage()"></div>
+  <div id="page-info"></div>
+</div>
+
+<script>
+let pdfDoc = null,
+    pageNum = 1,
+    scale = 1.5,
+    canvas = document.getElementById("pdf-canvas"),
+    ctx = canvas.getContext("2d");
+
+async function openPDF(url) {
+  document.getElementById("reader").style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  const loadingTask = pdfjsLib.getDocument(url);
+  pdfDoc = await loadingTask.promise;
+
+  pageNum = 1;
+  renderPage(pageNum);
+}
+
+function closePDF() {
+  document.getElementById("reader").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+function renderPage(num) {
+  pdfDoc.getPage(num).then(function(page) {
+    let viewport = page.getViewport({ scale });
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    let renderContext = { canvasContext: ctx, viewport };
+    page.render(renderContext);
+
+    document.getElementById("page-info").innerText =
+      `Page ${num} / ${pdfDoc.numPages}`;
+  });
+}
+
+function prevPage() {
+  if (pageNum <= 1) return;
+  pageNum--;
+  renderPage(pageNum);
+}
+
+function nextPage() {
+  if (pageNum >= pdfDoc.numPages) return;
+  pageNum++;
+  renderPage(pageNum);
+}
+</script>
+
+</body>
+</html>
