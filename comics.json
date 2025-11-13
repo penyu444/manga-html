@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Jojo's Bizarre Adventure",
-    "thumbnail": "https://placehold.co/300x400?text=Phantom+Blood",
+    "thumbnail": "https://raw.githubusercontent.com/penyu444/manga-html/main/JojosBizarreAdventure/jojocover.jpg",
     "url": "https://penyu444.github.io/manga-html/JojosBizarreAdventure/JojosBizarreAdventure.html",
     "previewImages": [
       "https://placehold.co/400x600?text=Preview+1",
@@ -15,16 +15,16 @@
   },
   {
     "id": "2",
-    "title": "Battle Tendencies",
+    "title": "Oyasumi Pun Pun",
     "thumbnail": "https://placehold.co/300x400?text=Comic+2",
-    "url": "https://penyu444.github.io/manga-html/BattleTendencies/BattleTendencies.html",
+    "url": "https://penyu444.github.io/manga-html/oyasumipunpun/oyasumipunpun.html",
     "previewImages": [
       "https://placehold.co/400x600?text=Preview+1",
       "https://placehold.co/400x600?text=Preview+2",
       "https://placehold.co/400x600?text=Preview+3",
       "https://placehold.co/400x600?text=Preview+4"
     ],
-    "tags": ["Romance", "Drama"],
+    "tags": ["Romance", "Drama", "Inio Asano"],
     "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her."
   },
   {

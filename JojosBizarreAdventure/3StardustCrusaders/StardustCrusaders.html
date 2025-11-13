@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Stardust Crusaders – Volume List</title>
 
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
 <style>
   body {
     margin: 0;
@@ -13,14 +16,14 @@
   }
 
   header {
-    background-color: #6e5500; /* dark gold */
+    background-color: #d8ba10; /* dark gold */
     padding: 20px;
     text-align: center;
     font-size: 32px;
     font-weight: bold;
     letter-spacing: 2px;
-    border-bottom: 4px solid #144d14; /* dark green border */
-    text-shadow: 0 0 8px purple;
+    border-bottom: 4px solid #144d14;
+    text-shadow: 0 0 8px #f49fff;
   }
 
   #volume-list {
@@ -34,7 +37,7 @@
   .volume {
     width: 160px;
     background-color: #0a0a0a;
-    border: 3px solid #144d14; /* dark green */
+    border: 3px solid #5d488d;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -46,7 +49,7 @@
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-bottom: 3px solid #144d14;
+    border-bottom: 3px solid #5d488d;
   }
 
   .volume-title {
@@ -58,14 +61,59 @@
 
   .volume:hover {
     transform: scale(1.07);
-    box-shadow: 0 0 20px purple; /* purple glow */
+    box-shadow: 0 0 20px rgb(183, 138, 255);
+  }
+
+  /* PDF VIEWER */
+  #viewerContainer {
+    width: 100%;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    background-color: #002d00; /* dark military green */
+    display: none;  /* hidden until a PDF is selected */
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  canvas {
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
   }
 </style>
 
 <script>
-  function openPDF(file) {
-    window.location.href = file;
-  }
+let pdfDoc = null;
+
+function openPDF(file) {
+  // Clear previous PDF render
+  const container = document.getElementById("viewerContainer");
+  container.innerHTML = "";
+  container.style.display = "flex";
+
+  pdfjsLib.getDocument(file).promise.then((pdf) => {
+    pdfDoc = pdf;
+    for (let i = 1; i <= pdf.numPages; i++) {
+      renderPage(i);
+    }
+  });
+}
+
+function renderPage(num) {
+  pdfDoc.getPage(num).then((page) => {
+    const viewport = page.getViewport({ scale: 1.5 });
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+    document.getElementById("viewerContainer").appendChild(canvas);
+
+    page.render({
+      canvasContext: ctx,
+      viewport: viewport
+    });
+  });
+}
 </script>
 
 </head>
@@ -75,105 +123,106 @@
 
 <div id="volume-list">
 
-  <!-- VOLUME 13–28 -->
-
   <!-- 13 -->
-  <div class="volume" onclick="openPDF('Volume_13.pdf')">
-    <img src="vol13cover.png" alt="Volume 13">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 13 - DIO_s Curse.pdf')">
+    <img src="vol13cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 13</div>
   </div>
 
   <!-- 14 -->
-  <div class="volume" onclick="openPDF('Volume_14.pdf')">
-    <img src="vol14cover.png" alt="Volume 14">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 14 - The Empty Ship and the Ape.pdf')">
+    <img src="vol14cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 14</div>
   </div>
 
   <!-- 15 -->
-  <div class="volume" onclick="openPDF('Volume_15.pdf')">
-    <img src="vol15cover.png" alt="Volume 15">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 15 - The Gun is Mightier than the Sword.pdf')">
+    <img src="vol15cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 15</div>
   </div>
 
   <!-- 16 -->
-  <div class="volume" onclick="openPDF('Volume_16.pdf')">
-    <img src="vol16cover.png" alt="Volume 16">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 16 - Battle Apprentice!.pdf')">
+    <img src="vol16cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 16</div>
   </div>
 
   <!-- 17 -->
-  <div class="volume" onclick="openPDF('Volume_17.pdf')">
-    <img src="vol17cover.png" alt="Volume 17">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 17 - Terrifying Lovers.pdf')">
+    <img src="vol17cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 17</div>
   </div>
 
   <!-- 18 -->
-  <div class="volume" onclick="openPDF('Volume_18.pdf')">
-    <img src="vol18cover.png" alt="Volume 18">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 18 - A Dream of Death Thirteen.pdf')">
+    <img src="vol18cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 18</div>
   </div>
 
   <!-- 19 -->
-  <div class="volume" onclick="openPDF('Volume_19.pdf')">
-    <img src="vol19cover.png" alt="Volume 19">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 19 - The Magic Lamp.pdf')">
+    <img src="vol19cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 19</div>
   </div>
 
   <!-- 20 -->
-  <div class="volume" onclick="openPDF('Volume_20.pdf')">
-    <img src="vol20cover.png" alt="Volume 20">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 20 - The Exploding Orange.pdf')">
+    <img src="vol20cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 20</div>
   </div>
 
   <!-- 21 -->
-  <div class="volume" onclick="openPDF('Volume_21.pdf')">
-    <img src="vol21cover.png" alt="Volume 21">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 21 - The Woman_s Legs Are Her Weapon.pdf')">
+    <img src="vol21cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 21</div>
   </div>
 
   <!-- 22 -->
-  <div class="volume" onclick="openPDF('Volume_22.pdf')">
-    <img src="vol22cover.png" alt="Volume 22">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 22 - Disappearance in a Locked Room.pdf')">
+    <img src="vol22cover.png"/>
     <div class="volume-title">Stardust Crusaders – Volume 22</div>
   </div>
 
   <!-- 23 -->
-  <div class="volume" onclick="openPDF('Volume_23.pdf')">
-    <img src="vol23cover.png" alt="Volume 23">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 23 - D_arby_s Collection.pdf')">
+    <img src="vol23cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 23</div>
   </div>
 
   <!-- 24 -->
-  <div class="volume" onclick="openPDF('Volume_24.pdf')">
-    <img src="vol24cover.png" alt="Volume 24">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 24 - The Gatekeeper of Hell, Pet Shop.pdf')">
+    <img src="vol24cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 24</div>
   </div>
 
   <!-- 25 -->
-  <div class="volume" onclick="openPDF('Volume_25.pdf')">
-    <img src="vol25cover.png" alt="Volume 25">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 25 - D_arby the Player.pdf')">
+    <img src="vol25cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 25</div>
   </div>
 
   <!-- 26 -->
-  <div class="volume" onclick="openPDF('Volume_26.pdf')">
-    <img src="vol26cover.png" alt="Volume 26">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 26 - The Mist of Emptiness, Vanilla Ice.pdf')">
+    <img src="vol26cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 26</div>
   </div>
 
   <!-- 27 -->
-  <div class="volume" onclick="openPDF('Volume_27.pdf')">
-    <img src="vol27cover.png" alt="Volume 27">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 27 - DIO_s World.pdf')">
+    <img src="vol27cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 27</div>
   </div>
 
   <!-- 28 -->
-  <div class="volume" onclick="openPDF('Volume_28.pdf')">
-    <img src="vol28cover.png" alt="Volume 28">
+  <div class="volume" onclick="openPDF('JoJo_s Bizzare Adventure - Part 3 - Volume 28 - The Faraway Journey, Farewell Friends.pdf')">
+    <img src="vol28cover.png">
     <div class="volume-title">Stardust Crusaders – Volume 28</div>
   </div>
 
 </div>
+
+<!-- PDF Viewer -->
+<div id="viewerContainer"></div>
 
 </body>
 </html>
