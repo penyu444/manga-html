@@ -41,6 +41,11 @@
       padding: 2rem;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .part-card {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
@@ -50,6 +55,7 @@
       position: relative;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       border: 2px solid transparent;
+      display: block;
     }
 
     .part-card:hover {
@@ -106,85 +112,93 @@
   <main class="parts-container">
 
     <!-- PART 1 -->
-    <div class="part-card part1"
-      onclick="openPart('https://penyu444.github.io/manga-html/JojosBizarreAdventure/1PhantomBlood/PhantomBlood.html')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part1_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 1: Phantom Blood</div>
-        <div class="part-subtitle">Jonathan Joestar’s Noble Spirit</div>
+    <a href="https://penyu444.github.io/manga-html/JojosBizarreAdventure/1PhantomBlood/PhantomBlood.html">
+      <div class="part-card part1">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part1_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 1: Phantom Blood</div>
+          <div class="part-subtitle">Jonathan Joestar’s Noble Spirit</div>
+        </div>
       </div>
-    </div>
+    </a>
 
     <!-- PART 2 -->
-    <div class="part-card part2"
-      onclick="openPart('https://penyu444.github.io/manga-html/JojosBizarreAdventure/2BattleTendency/BattleTendency.html')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 2: Battle Tendency</div>
-        <div class="part-subtitle">Joseph Joestar’s Clever Tricks</div>
+    <a href="https://penyu444.github.io/manga-html/JojosBizarreAdventure/2BattleTendency/BattleTendency.html">
+      <div class="part-card part2">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 2: Battle Tendency</div>
+          <div class="part-subtitle">Joseph Joestar’s Clever Tricks</div>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <!-- Empty parts (placeholder for now) -->
-    <div class="part-card part3" onclick="alert('Part 3 not added yet!')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 3: Stardust Crusaders</div>
-        <div class="part-subtitle">Coming soon</div>
+    <!-- PLACEHOLDERS -->
+    <a href="#">
+      <div class="part-card part3" onclick="alert('Part 3 not added yet!')">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 3: Stardust Crusaders</div>
+          <div class="part-subtitle">Coming soon</div>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="part-card part4" onclick="alert('Part 4 not added yet!')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 4: Diamond is Unbreakable</div>
-        <div class="part-subtitle">Coming soon</div>
+    <a href="#">
+      <div class="part-card part4" onclick="alert('Part 4 not added yet!')">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 4: Diamond is Unbreakable</div>
+          <div class="part-subtitle">Coming soon</div>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="part-card part5" onclick="alert('Part 5 not added yet!')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 5: Golden Wind</div>
-        <div class="part-subtitle">Coming soon</div>
+    <a href="#">
+      <div class="part-card part5" onclick="alert('Part 5 not added yet!')">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 5: Golden Wind</div>
+          <div class="part-subtitle">Coming soon</div>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="part-card part6" onclick="alert('Part 6 not added yet!')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 6: Stone Ocean</div>
-        <div class="part-subtitle">Coming soon</div>
+    <a href="#">
+      <div class="part-card part6" onclick="alert('Part 6 not added yet!')">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 6: Stone Ocean</div>
+          <div class="part-subtitle">Coming soon</div>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="part-card part7" onclick="alert('Part 7 not added yet!')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 7: Steel Ball Run</div>
-        <div class="part-subtitle">Coming soon</div>
+    <a href="#">
+      <div class="part-card part7" onclick="alert('Part 7 not added yet!')">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 7: Steel Ball Run</div>
+          <div class="part-subtitle">Coming soon</div>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="part-card part8" onclick="alert('Part 8 not added yet!')">
-      <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
-      <div class="part-info">
-        <div class="part-title">Part 8: JoJolion</div>
-        <div class="part-subtitle">Coming soon</div>
+    <a href="#">
+      <div class="part-card part8" onclick="alert('Part 8 not added yet!')">
+        <img src="https://penyu444.github.io/manga-html/JojosBizarreAdventure/part2_cover.png">
+        <div class="part-info">
+          <div class="part-title">Part 8: JoJolion</div>
+          <div class="part-subtitle">Coming soon</div>
+        </div>
       </div>
-    </div>
+    </a>
 
   </main>
 
   <footer>
     © 2025 JoJo Library | All Rights Belong to Hirohiko Araki
   </footer>
-
-  <script>
-    function openPart(url) {
-      window.location.href = url;
-    }
-  </script>
 
 </body>
 </html>
