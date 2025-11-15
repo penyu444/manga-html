@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Jojo's Bizarre Adventure",
-    "thumbnail": "https://raw.githubusercontent.com/penyu444/JojosBizarreAdventureStorage/jojocover.jpg",
+    "thumbnail": "https://raw.githubusercontent.com/penyu444/JojosBizarreAdventureStorage/main/jojocover.jpg",
     "url": "https://penyu444.github.io/JojosBizarreAdventureStorage/JojosBizarreAdventure.html",
     "previewImages": [
       "https://placehold.co/400x600?text=Preview+1",
@@ -30,7 +30,7 @@
   {
     "id": "3",
     "title": "Yotsubato",
-    "thumbnail": "https://raw.githubusercontent.com/penyu444/manga-html/YotsubatoStorage/cover.png",
+    "thumbnail": "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/cover.png",
     "url": "https://penyu444.github.io/YotsubatoStorage/yotsubato.html",
     "previewImages": [
       "https://placehold.co/400x600?text=Preview+1",
