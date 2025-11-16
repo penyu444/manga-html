@@ -16,8 +16,8 @@
   {
     "id": "2",
     "title": "Oyasumi Pun Pun",
-    "thumbnail": "https://placehold.co/300x400?text=Comic+2",
-    "url": "https://penyu444.github.io/manga-html/oyasumipunpun/oyasumipunpun.html",
+    "thumbnail": "https://raw.githubusercontent.com/penyu444/OyasumiPunPunStorage/main/oyasumicover.jpg",
+    "url": "https://penyu444.github.io/OyasumiPunPunStorage/OyasumiPunPun.html",
     "previewImages": [
       "https://placehold.co/400x600?text=Preview+1",
       "https://placehold.co/400x600?text=Preview+2",
