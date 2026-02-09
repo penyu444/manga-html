@@ -33,10 +33,10 @@
     "thumbnail": "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/cover.png",
     "url": "https://penyu444.github.io/YotsubatoStorage/yotsubato.html",
     "previewImages": [
-      "https://placehold.co/400x600?text=Preview+1",
-      "https://placehold.co/400x600?text=Preview+2",
-      "https://placehold.co/400x600?text=Preview+3",
-      "https://placehold.co/400x600?text=Preview+4"
+      "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/yotsupreview1.png",
+      "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/yotsupreview2.png",
+      "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/yotsupreview3.png",
+      "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/yotsupreview4.png"
     ],
     "tags": ["Comedy", "Slice of Life", "Kiyohiko Azuma"],
     "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her."
@@ -56,6 +56,7 @@
     "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her."
   }
 ]
+
 
 
 
