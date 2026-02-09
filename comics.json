@@ -24,7 +24,7 @@
       "https://raw.githubusercontent.com/penyu444/OyasumiPunPunStorage/main/punpun3.png",
       "https://raw.githubusercontent.com/penyu444/OyasumiPunPunStorage/main/punpun4.png"
     ],
-    "tags": ["Romance", "Drama", "Inio Asano"],
+    "tags": ["Sureal","Romance", "Drama", "Inio Asano"],
     "description": "Oyasumi Punpun is a dark coming-of-age drama about a boy named Punpun whose life unravels through trauma, obsession, love, and self-destruction. Blending surreal imagery with brutal emotional realism, it explores depression, abuse, relationships, and the struggle to find meaning in a collapsing world."
   },
   {
@@ -44,18 +44,19 @@
   {
     "id": "4",
     "title": "I Was Born to Work in Retail",
-    "thumbnail": "https://raw.githubusercontent.com/penyu444/YotsubatoStorage/main/cover.png",
+    "thumbnail": "https://raw.githubusercontent.com/penyu444/IWBTWR/main/cover.png",
     "url": "https://borntoworkretail.com/",
     "previewImages": [
-      "https://placehold.co/400x600?text=Preview+1",
-      "https://placehold.co/400x600?text=Preview+2",
-      "https://placehold.co/400x600?text=Preview+3",
-      "https://placehold.co/400x600?text=Preview+4"
+      "https://raw.githubusercontent.com/penyu444/IWBTWRStorage/main/iwbtwr1.png",
+      "https://raw.githubusercontent.com/penyu444/IWBTWRStorage/main/iwbtwr2.png",
+      "https://raw.githubusercontent.com/penyu444/IWBTWRStorage/main/iwbtwr3.png",
+      "https://raw.githubusercontent.com/penyu444/IWBTWRStorage/main/iwbtwr4.png"
     ],
-    "tags": ["Comedy", "Slice of Life", "Kiyohiko Azuma"],
-    "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her."
+    "tags": ["Sureal", "Slice of Life", "Pear哥"],
+    "description": "Stuck in a dead end retail job with no forseeable future, Jenny is doomed to this life forever. However, there's something happening in the back alleys of Hong Kong. A city preparing to swallow itself whole."
   }
 ]
+
 
 
 
