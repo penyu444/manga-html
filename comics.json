@@ -5,7 +5,7 @@
     "thumbnail": "https://raw.githubusercontent.com/penyu444/JojosBizarreAdventureStorage/main/jojocover.jpg",
     "url": "https://penyu444.github.io/JojosBizarreAdventureStorage/JojosBizarreAdventure.html",
     "previewImages": [
-      "https://placehold.co/400x600?text=Preview+1",
+      "https://raw.githubusercontent.com/penyu444/JojosBizarreAdventureStorage/main/jojopreview.png",
       "https://placehold.co/400x600?text=Preview+2",
       "https://placehold.co/400x600?text=Preview+3",
       "https://placehold.co/400x600?text=Preview+4"
@@ -56,4 +56,5 @@
     "description": "A slice-of-life manga following the curious and energetic Yotsuba as she explores the world around her."
   }
 ]
+
 
